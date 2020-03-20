@@ -3,6 +3,7 @@ module Lib
     , solve
     , solve2
     , solve3
+    , solve4
     ) where
 
 import Data.List
@@ -41,3 +42,11 @@ solve3 :: Fractional a => [[a]] -> [a] -> [a]
 solve3 _L b = reverse $ solve3' _L' b
   where _L' = map reverse _L
 
+-- Don't use reverse -- need different DS with O(1) append
+solve4' :: Fractional a => [[a]] -> [a] -> [a]
+solve4' _L _b = foldl' f [] $ zip _L _b
+  where f prev (row, b) = prev ++ [let (l, ls) = (last row, init row) 
+                                    in (b - dotp ls prev) / l]
+
+solve4 :: Fractional a => [[a]] -> [a] -> [a]
+solve4 _L b = solve4' _L b

@@ -1,6 +1,5 @@
 module Lib
-    ( someFunc
-    , dotp
+    ( dotp
     , solve
     ) where
 

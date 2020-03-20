@@ -1,0 +1,62 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 2579a4a2aa813be44f226d3e7dd051b0c7965012c44dc6b4936ecf0dd739781d
+
+name:           hs-strsv
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/hs-strsv#readme>
+homepage:       https://github.com/githubuser/hs-strsv#readme
+bug-reports:    https://github.com/githubuser/hs-strsv/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2020 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/hs-strsv
+
+library
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_hs_strsv
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+executable hs-strsv-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_hs_strsv
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , hs-strsv
+  default-language: Haskell2010
+
+test-suite hs-strsv-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_hs_strsv
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , hs-strsv
+  default-language: Haskell2010
